@@ -36,14 +36,16 @@ vars:
     #######################################
     #  Product Class Regular Expressions  #
     #######################################
-    "product[dell][server]"   string => "^PowerEdge.*";
-    "product[hp][server]"     string=> "^ProLiant.*";
+    "product[dell][server]"   string => "^PowerEdge R.*";
+    "product[dell][blade]"   string => "^PowerEdge M.*";
+    "product[hp][server]"     string=> "^ProLiant DL.*";
+    "product[hp][blade]"     string=> "^ProLiant BL.*";
     "product[lenovo][laptop]" string => "^4270CTO.*";
     "product[vmware][virtual_machine]" string => "^VMware Virtual Platform.*";
 
     # It would be cool to be able to automatically figure out the different
     # product classes, but getting nth index of array isn't supported.
-    "products" slist => { "server", "laptop", "virtual_machine" };
+    "products" slist => { "server", "blade", "laptop", "virtual_machine" };
 
 classes:
   linux::
